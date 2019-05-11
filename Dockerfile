@@ -7,6 +7,7 @@ ENV APP_ROOT=/node
 WORKDIR $APP_ROOT
 
 RUN apk update \
+  && npm i -g npm \
   && apk add tzdata git \
   && TZ=${TZ:-Asia/Tokyo} \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime \
