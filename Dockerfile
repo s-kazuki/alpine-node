@@ -7,10 +7,9 @@ ENV APP_ROOT=/node
 WORKDIR $APP_ROOT
 
 RUN apk update \
-  && npm i -g npm yarn --force \
-  && apk add tzdata \
+  && npm i --global --force npm yarn \
+  && apk add --update-cache --no-cache tzdata \
   && TZ=${TZ:-Asia/Tokyo} \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime \
   && echo $TZ> /etc/timezone \
-  && apk del tzdata \
-  && rm -rf /var/cache/apk/*
+  && apk del --purge tzdata \
