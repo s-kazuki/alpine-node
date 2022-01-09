@@ -8,9 +8,10 @@ WORKDIR $APP_ROOT
 
 RUN apk update \
   && npm i -g npm \
-  && apk add tzdata git \
+  && npm i -g yarn --force \
+  && apk add --update-cache --no-cache tzdata \
   && TZ=${TZ:-Asia/Tokyo} \
   && cp /usr/share/zoneinfo/$TZ /etc/localtime \
   && echo $TZ> /etc/timezone \
-  && apk del tzdata \
+  && apk del tzdata --purge \
   && rm -rf /var/cache/apk/*

@@ -8,4 +8,4 @@ version: 14.18.2
 version: 8.3.0
 
 ## Yarn
-version: 1.22.18
+version: 1.22.17
