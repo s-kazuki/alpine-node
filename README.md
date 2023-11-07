@@ -2,10 +2,10 @@
 Lightweight node docker image on alpine
 
 ## NodeJS
-version: 18.16.1
+version: 20.9.0
 
 ## NPM
-version: 9.7.2
+version: 10.2.3
 
 ## Yarn
 version: 1.22.19
